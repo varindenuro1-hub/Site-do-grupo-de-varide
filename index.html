@@ -1,6 +1,3 @@
-
-✅ index.html (versão com cor branca)
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,173 +5,236 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gastronomia Moçambicana</title>
   <style>
+    /* ======= ESTILO GERAL ======= */
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", Arial, sans-serif;
       margin: 0;
-      background-color: #ffffff;
-      color: #222;
+      background-color: #fff8f0;
+      color: #333;
     }
 
     header {
-      background-color: #ffffff;
-      color: #000;
+      background: linear-gradient(135deg, #8b0000, #b22222);
+      color: white;
       text-align: center;
-      padding: 15px 0;
-      border-bottom: 2px solid #ccc;
+      padding: 25px 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     }
 
-    nav {
-      background-color: #f2f2f2;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
+    h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 1px;
     }
 
-    nav a {
-      color: #000;
-      text-decoration: none;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    nav ul li {
       display: inline-block;
-      padding: 10px 15px;
-      font-weight: bold;
+      margin: 0 15px;
     }
 
-    nav a:hover {
-      background-color: #e6e6e6;
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+      background-color: #fff;
+      color: #b22222;
     }
 
     main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 10px;
+      padding: 30px;
+      text-align: center;
     }
 
     section {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      border: 1px solid #ddd;
+      display: none;
+      animation: fadeIn 0.4s ease-in;
     }
 
-    h2 {
-      color: #000;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-
-    th {
-      background-color: #f5f5f5;
-    }
-
-    form label {
+    section.active {
       display: block;
-      margin-top: 10px;
-      font-weight: bold;
     }
 
-    form input {
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* ======= PÁGINA INÍCIO ======= */
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Mozambique_food.jpg') center/cover;
+      color: white;
+      padding: 100px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .btn {
+      background-color: #ffd700;
+      color: #8b0000;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #fff;
+      color: #b22222;
+    }
+
+    /* ======= MENU ======= */
+    .menu-lista {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .menu-lista li {
+      padding: 15px;
+      margin: 10px auto;
+      width: 80%;
+      background-color: #fff8dc;
+      border-left: 6px solid #b22222;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+    }
+
+    /* ======= FORMULÁRIO ======= */
+    form {
+      max-width: 400px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    input, button {
       width: 100%;
-      padding: 6px;
-      margin-top: 4px;
+      padding: 10px;
+      margin-top: 8px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
+      font-size: 15px;
     }
 
     button {
-      margin-top: 10px;
-      background-color: #000;
+      background-color: #b22222;
       color: white;
       border: none;
-      padding: 8px 15px;
-      border-radius: 4px;
+      font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #333;
+      background-color: #8b0000;
     }
 
-    footer {
-      text-align: center;
-      background-color: #f2f2f2;
-      color: #000;
-      padding: 10px;
-      font-size: 14px;
-      border-top: 1px solid #ddd;
+    /* ======= ELEMENTOS DO GRUPO ======= */
+    details {
+      background-color: #fff;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 500px;
+      text-align: left;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     summary {
       font-weight: bold;
+      color: #8b0000;
       cursor: pointer;
-      color: #000;
+    }
+
+    details ul {
+      list-style: square;
+      margin-left: 20px;
+    }
+
+    /* ======= RODAPÉ ======= */
+    footer {
+      background-color: #8b0000;
+      color: #ffd700;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Gastronomia Moçambicana</h1>
+    <h1>🍴 Gastronomia Moçambicana</h1>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" onclick="mostrar('inicio')">Início</a></li>
+        <li><a href="#" onclick="mostrar('menu')">Menu</a></li>
+        <li><a href="#" onclick="mostrar('sobre')">Sobre</a></li>
+        <li><a href="#" onclick="mostrar('reservas')">Reservas</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#menu">Menu</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#reservas">Reservas</a>
-  </nav>
-
   <main>
-    <section id="inicio">
-      <h2>Bem-vindo!</h2>
-      <p>O restaurante <strong>Gastronomia Moçambicana</strong> celebra os sabores e tradições do nosso país. Experimente pratos típicos feitos com ingredientes frescos e o melhor da nossa cultura.</p>
+    <!-- Página Início -->
+    <section id="inicio" class="active">
+      <div class="hero">
+        <h2>Bem-vindo ao sabor de Moçambique!</h2>
+        <p>Sabores autênticos, tradição e hospitalidade moçambicana em cada prato.</p>
+        <a href="#" class="btn" onclick="mostrar('menu')">Ver Menu</a>
+      </div>
     </section>
 
+    <!-- Página Menu -->
     <section id="menu">
       <h2>Nosso Menu</h2>
-      <table>
-        <tr><th>Prato</th><th>Preço</th></tr>
-        <tr><td>Matapa com camarão</td><td>350 MT</td></tr>
-        <tr><td>Caril de amendoim</td><td>300 MT</td></tr>
-        <tr><td>Frango à Zambeziana</td><td>400 MT</td></tr>
-        <tr><td>Xima com peixe grelhado</td><td>250 MT</td></tr>
-      </table>
+      <ul class="menu-lista">
+        <li><strong>Matapa</strong> – 400 MZN</li>
+        <li><strong>Frango à Zambeziana</strong> – 550 MZN</li>
+        <li><strong>Caril de camarão</strong> – 650 MZN</li>
+        <li><strong>Pão de milho</strong> – 250 MZN</li>
+        <li><strong>Peixe grelhado com coco</strong> – 600 MZN</li>
+      </ul>
     </section>
 
+    <!-- Página Sobre -->
     <section id="sobre">
       <h2>Sobre Nós</h2>
-      <p>O <strong>Gastronomia Moçambicana</strong> foi criado para valorizar a culinária tradicional de Moçambique. Cada prato é preparado com respeito às receitas originais e aos ingredientes locais.</p>
-    </section>
+      <p>O restaurante <strong>Gastronomia Moçambicana</strong> nasceu da paixão pela culinária local e do desejo de preservar os sabores tradicionais que fazem parte da nossa cultura.</p>
+      <p>Oferecemos uma experiência autêntica com ingredientes frescos e receitas típicas moçambicanas.</p>
 
-    <section id="reservas">
-      <h2>Reservas</h2>
-      <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required>
-
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" name="hora" required>
-
-        <label for="pessoas">Número de pessoas:</label>
-        <input type="number" id="pessoas" name="pessoas" min="1" required>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-
-    <section>
       <details>
-        <summary>Elementos do Grupo</summary>
+        <summary>👥 Elementos do Grupo</summary>
         <ul>
           <li>Amido Marufo nº 10</li>
           <li>Charama Paulino nº 17</li>
@@ -186,32 +246,53 @@
           <li>Varinde Nuro nº 72</li>
           <li>Vigros Mauro nº 74</li>
           <li>Dino Ramadane nº 79</li>
-          <li>*** *** nº 29</li>
+          <li>*** nº 29</li>
         </ul>
-        <p><strong>Turma: C</strong></p>
+        <p><strong>Turma:</strong> C</p>
       </details>
+    </section>
+
+    <!-- Página Reservas -->
+    <section id="reservas">
+      <h2>Faça sua reserva</h2>
+      <form onsubmit="enviarReserva(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" required>
+
+        <label for="pessoas">Número de pessoas:</label>
+        <input type="number" id="pessoas" min="1" required>
+
+        <button type="submit">Reservar</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    © 2025 Gastronomia Moçambicana — Trabalho Escolar
+    © 2025 Gastronomia Moçambicana | Grupo - Turma C
   </footer>
+
+  <script>
+    // Função para alternar páginas
+    function mostrar(secao) {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById(secao).classList.add("active");
+
+      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+      event.target.classList.add("active");
+    }
+
+    // Simular envio de reserva
+    function enviarReserva(e) {
+      e.preventDefault();
+      alert("Reserva enviada com sucesso! Obrigado por escolher a Gastronomia Moçambicana 🍽️");
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
-
-
----
-
-✨ Como usar:
-
-1. Cria um ficheiro chamado index.html.
-
-
-2. Cola esse código.
-
-
-3. Abre no navegador — o site aparecerá com fundo branco, tudo limpo e funcional.
-
-
-
-Queres que eu adicione imagens dos pratos (ainda mantendo o estilo branco e simples)? Fica bem bonito para o trabalho.
